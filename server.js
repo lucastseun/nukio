@@ -5,11 +5,13 @@ const router = createRouter()
 
 
 app.use(router.routes())
+
 router.get('/user', ctx=>{
-    console.log(1111);
+    ctx.res.end(JSON.stringify({name:'Joe',age:19}))
 })
-router.get('/title', ctx=>{
-    console.log(2222);
+
+router.post('/userbyid', ctx => {
+    
 })
 
 app.listen({port: 3000}, () => {
