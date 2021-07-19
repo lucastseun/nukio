@@ -1,13 +1,10 @@
-import { createApp, createRouter } from './lib/app.js'
+import { createApp, createRouter } from './lib/mod.js'
 import logger from './src/logger/logger.js'
-import api from './src/api/index.js'
-console.log(api);
 
 const app = createApp()
+const router = createRouter()
 
 app.use(logger())
-
-const router = createRouter()
 
 app.use(router.routes())
 
