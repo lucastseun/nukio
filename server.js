@@ -3,15 +3,11 @@ import { createApp, createRouter } from './lib/mod.js'
 const app = createApp()
 const router = createRouter()
 
-
 app.use(router.routes())
 
-router.get('/user', ctx=>{
-    ctx.res.end(JSON.stringify({name:'Joe',age:19}))
-})
-
-router.post('/userbyid', ctx => {
-    
+router.post('/user', ctx => {
+    const body = ctx.body
+    ctx.send(JSON.stringify(body))
 })
 
 app.listen({port: 3000}, () => {
